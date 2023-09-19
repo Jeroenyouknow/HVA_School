@@ -1,0 +1,5 @@
+{"NameonBooking": "Nelis", "Age": 20, "NightsonBooking": "5000", "PersonsonBooking": "9", "Bookingsnumber": "388001", "Roombooked": "105", "Totalprice": 504950.0, "Activebooking": true}
+{"NameonBooking": "Jeroen", "Age": 26, "NightsonBooking": "5", "PersonsonBooking": "5", "Bookingsnumber": "643318", "Roombooked": "103", "Totalprice": 304.95, "Activebooking": true}
+{"NameonBooking": "Dort", "Age": 30, "NightsonBooking": "2", "PersonsonBooking": "1", "Bookingsnumber": "233381", "Roombooked": "101", "Totalprice": 51.0, "Activebooking": false}
+{"NameonBooking": "Wesley", "Age": 34, "NightsonBooking": "3", "PersonsonBooking": "3", "Bookingsnumber": "131745", "Roombooked": "102", "Totalprice": 152.25, "Activebooking": true}
+{"NameonBooking": "Fong Li-Kin", "Age": 44, "NightsonBooking": "2", "PersonsonBooking": "10", "Bookingsnumber": "321237", "Roombooked": "105", "Totalprice": 201.98, "Activebooking": true}
