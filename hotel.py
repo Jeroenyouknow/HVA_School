@@ -1,11 +1,11 @@
-# Maker: Jeroen Huiskes Programma Goal: Simple program where you can book a room, check in and check out
+# Maker: Jeroen Huiskes Program Goal: Simple program where you can book a room, check in and check out
 # Please note that a file bookings.txt will made by the first RUN
 import json
 import random
 import time
 
 
-# This function is a simple menu where the programm always will go back, i return the choice made by the user.
+# This function is a simple menu where the program always will go back, i return the choice made by the user.
 def main_menu():
     print(
         "Welkom bij Hotel Huiskes \n" + "Wat wilt u doen vandaag? \n" + "1. Boek een kamer\n" + "2. Inchecken\n" + "3. Uitchecken\n" + "4. Afsluiten")
@@ -23,9 +23,11 @@ def main_menu_choice(number):
         check_out()
     elif number == 4:
         exit()
+    else:
+        main_menu_choice(main_menu())
 
 
-# This function makes the booking, in the function the fucntion room_assing() will be called
+# This function makes the booking, in the function the function room_assing() will be called
 # This will give the room number and cost of the total stay.
 # A user need to be over 18 to book! When the user is not satisfied with the data he can change it trough function change booking
 # If the user agrees with the data the booking and data is stored as JSON in bookings.txt
@@ -129,7 +131,10 @@ def room_assign(persons, nights):
     room_104 = ["104", 8, 75.20]
     room_105 = ["105", 10, 100.99]
 
-    if int(persons) <= room_101[1]:
+    if int(persons) <= 0 or int(nights) <= 0:
+        print("U kunt niet voor 0 personen en/of nachten boeken ")
+        main_menu_choice(main_menu())
+    elif int(persons) <= room_101[1]:
         room_number = "101"
         cost_of_room = nights * room_101[2]
     elif int(persons) <= room_102[1]:
@@ -172,7 +177,7 @@ def check_in():
 
             if accept_booking == "y":
                 print("U bent ingecheckt wij wensen u een fijne dag verder!")
-                time.sleep(10)
+                time.sleep(2)
                 print("U keert nu terug naar het menu")
                 main_menu_choice(main_menu())
 
@@ -188,9 +193,9 @@ def check_in():
                 "Helaas is uw boeking niet meer geldig! \n" + "Wij verzoeken u om naar een medewerker te gaan met uw boekingsnummer: " + booking_number)
             main_menu_choice(main_menu())
 
-    else:
-        print("Helaas hebben we uw boeking niet kunnen vinden")
-        main_menu_choice(main_menu())
+        else:
+            print("Helaas hebben we uw boeking niet kunnen vinden")
+            main_menu_choice(main_menu())
 
 
 # This function will check if the bookingsnumber exists and "Check out" the guest
